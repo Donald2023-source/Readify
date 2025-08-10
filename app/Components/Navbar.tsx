@@ -17,6 +17,7 @@ const Navbar = () => {
 
   const handleScroll = (e: any, href: string) => {
     e.preventDefault();
+    setNav(false);
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   return (
     <nav className="p-3 relative z-1">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between h-10">
         <div className="flex items-center gap-2">
           <Image className="h-10 w-10" src={logo} alt="logo" />
           <h2 className="font-bold text-lg">Readify</h2>
@@ -41,14 +42,13 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "flex md:flex-row flex-col md:h-fit md:sticky absolute inset-0 md:bg-none h-screen bg-gradient-to-b from-white to-[#0157FF] from-30% justify-center items-center gap-12 font-sans"
-              : "hidden md:flex md:flex-row flex-col md:h-fit justify-center items-center gap-12 font-sans"
+              ? "flex md:flex-row md:hidden flex-col  md:h-fit translate-x-0 transition duration-500 md:sticky absolute inset-0 md:bg-none h-screen bg-gradient-to-b from-white to-[#0157FF] from-30% justify-center items-center gap-12 font-sans"
+              : "md:flex hidden md:flex-row flex-col md:translate-x-0  translate-x-96 transition duration-500 md:h-fit justify-center items-center gap-12 font-sans"
           }
         >
           {navItems.map((item) => (
-            <div>
+            <div key={item?.href}>
               <Link
-                key={item?.href}
                 className="px-2 hover:font-semibold transition"
                 onClick={(e) => handleScroll(e, item?.href)}
                 href={item?.href}
@@ -61,12 +61,18 @@ const Navbar = () => {
             Try 7-day Free trial
           </button>
 
-          <h2 className="font-bold md:hidden absolute z-20 top-10 right-12 cursor-pointer hover:scale-95 transition">
+          <h2
+            onClick={() => setNav(false)}
+            className="font-bold md:hidden absolute z-20 top-10 right-12 cursor-pointer hover:scale-95 transition"
+          >
             X
           </h2>
         </div>
-        <h2 className="text-2xl md:hidden cursor-pointer hover:scale-95 transition">
-          <IoMenu className="text-lg" />
+        <h2
+          onClick={() => setNav(true)}
+          className=" md:hidden cursor-pointer hover:scale-95 transition"
+        >
+          <IoMenu className="text-3xl" />
         </h2>
         <button className="bg-[#0157FF] py-3 md:block hidden shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
           Try 7-day Free trial
