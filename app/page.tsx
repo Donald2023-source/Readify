@@ -5,8 +5,10 @@ const page = () => {
   return (
     <div>
       <Navbar />
-      <div>
-        <Hero />
+      <div className='max-w-6xl flex items-center mx-auto w-full  px-4'>
+        <div className='h-[80vh]'>
+          <Hero />
+        </div>
       </div>
     </div>
   )
