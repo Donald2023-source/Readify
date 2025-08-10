@@ -5,6 +5,7 @@ import logo from "@/public/Logo.png";
 import Link from "next/link";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import Button from "./Button";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navItems = [
@@ -57,9 +58,7 @@ const Navbar = () => {
               </Link>
             </div>
           ))}
-          <button className="bg-[#0157FF] md:hidden py-3 shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
-            Try 7-day Free trial
-          </button>
+          <Button text=" Try 7-day Free trial" />
 
           <h2
             onClick={() => setNav(false)}
