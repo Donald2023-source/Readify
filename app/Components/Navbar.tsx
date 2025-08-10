@@ -57,17 +57,17 @@ const Navbar = () => {
               </Link>
             </div>
           ))}
-          <button className="bg-[#0157FF] md py-3 shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
+          <button className="bg-[#0157FF] md:hidden py-3 shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
             Try 7-day Free trial
           </button>
-           <h2 className="font-bold md:hidden absolute z-[1000] top-10 right-12 cursor-pointer hover:scale-95 transition">
-            <IoMenu />
-          </h2>
+
           <h2 className="font-bold md:hidden absolute z-20 top-10 right-12 cursor-pointer hover:scale-95 transition">
             X
           </h2>
         </div>
-
+        <h2 className="text-2xl md:hidden cursor-pointer hover:scale-95 transition">
+          <IoMenu className="text-lg" />
+        </h2>
         <button className="bg-[#0157FF] py-3 md:block hidden shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
           Try 7-day Free trial
         </button>
