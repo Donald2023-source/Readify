@@ -1,4 +1,5 @@
-import React, { ReactEventHandler } from "react";
+"use client";
+import React from "react";
 import Image from "next/image";
 import logo from "@/public/Logo.png";
 import Link from "next/link";
@@ -28,18 +29,33 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-3">
-      <div className="flex items-center gap-2">
-        <Image className="h-10 w-10" src={logo} alt="logo" />
-        <h2 className="font-bold text-lg">Readify</h2>
-      </div>
+    <nav className="p-3 relative">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Image className="h-10 w-10" src={logo} alt="logo" />
+          <h2 className="font-bold text-lg">Readify</h2>
+        </div>
 
-      <div>
-        {navItems.map((item) => (
-          <Link onClick={(e) => handleScroll(e, item?.href)} href={item?.href}>
-            {item?.name}
-          </Link>
-        ))}
+        <div className="flex md:flex-row flex-col md:h-fit md:sticky absolute inset-0 h-screen bg-gradient-to-b from-white to-[#0157FF] from-30% justify-center items-center gap-12 font-sans">
+          {navItems.map((item) => (
+            <div>
+              <Link
+                className="px-2 hover:font-semibold transition"
+                onClick={(e) => handleScroll(e, item?.href)}
+                href={item?.href}
+              >
+                {item?.name}
+              </Link>
+            </div>
+          ))}
+          <button className="bg-[#0157FF] md:hidden py-3 shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
+            Try 7-day Free trial
+          </button>
+        </div>
+
+        <button className="bg-[#0157FF] py-3 md:block hidden shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
+          Try 7-day Free trial
+        </button>
       </div>
     </nav>
   );
