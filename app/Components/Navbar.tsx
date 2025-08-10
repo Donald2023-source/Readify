@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "@/public/Logo.png";
 import Link from "next/link";
 import { useState } from "react";
-
+import { IoMenu } from "react-icons/io5";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const navItems = [
@@ -61,7 +61,10 @@ const Navbar = () => {
             Try 7-day Free trial
           </button>
           <h2 className="font-bold md:hidden absolute top-10 right-12 cursor-pointer hover:scale-95 transition">
-           {nav ? "X" : "Menu"}
+           {
+            nav ? "X" : 
+            <IoMenu />
+           }
            
           </h2>
 
