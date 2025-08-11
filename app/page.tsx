@@ -13,8 +13,40 @@ import Himage from "@/public/Frame 111.png";
 import PricingCard from "@/app/Components/PriceCard";
 import PriceCard from "@/app/Components/PriceCard";
 const page = () => {
+  const Starter = [
+    "Basic Ai Chatbot Functionality",
+    "50 Chatbot Interactions",
+    "Limited Intergration",
+    "Preset Chatbot templates",
+    "Commuity Support",
+    "Basic analytics Dashboards",
+    "Standard respionsive speed",
+    "Email Support",
+    "1 Chatbot Instance",
+  ];
+
+  const Professional = [
+    "5,000 chatbot intergration",
+    "Multi-channel intergration",
+    "Custom Ai training and response",
+    "Advanced Analytics & insights",
+    "Email Support",
+    "Faster response speed",
+    "3 Chatbot intergration",
+  ];
+
+  const Buisiness = [
+    "Unlimited Chatbot integration",
+    "Omini Channel Support",
+    "AI Powered lead generation and Intergration",
+    "Team Collaboration and multi-agent Support",
+    "Priority AI response speed",
+    "API access for custom intergration",
+    "Dedicated Amount manager",
+    "10 AI bot instances",
+  ];
   return (
-    <div className="max-w-6xl mx-auto flex flex-col items-center w-full">
+    <div>
       <div className="fixed top-0 bg-white/ rounded-xl backdrop-blur-lg left-0 w-full z-10">
         <Navbar />
       </div>
@@ -82,8 +114,25 @@ const page = () => {
         </motion.div>
 
         {/* Pricing */}
-        <div className="w-full">
-          <PriceCard className="w-[30%]" />
+        <div className="max-w-6xl mx-auto flex flex-col items-center w-full">
+          <PriceCard
+            planData={Starter}
+            name="Starter"
+            price="Free"
+            className="w-[30%] shadow bg-[#E5E7EB] rounded-xl p-4"
+          />
+          <PriceCard
+            planData={Professional}
+            price="$25"
+            name="Professional"
+            className="w-[30%] bg-[#111827] shadow rounded-xl p-4"
+          />
+          <PriceCard
+            planData={Buisiness}
+            price="$45"
+            name="Buisiness"
+            className="w-[30%] shadow bg-[#E5E7EB] rounded-xl p-4"
+          />
         </div>
       </div>
     </div>
