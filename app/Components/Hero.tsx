@@ -8,15 +8,15 @@ import heroImg from "@/public/Hero-image 1.png";
 const Hero = () => {
   return (
     <div className="h-full max-w-6xl flex items-center flex-col pt-10">
-      <div className="flex items-center w-[55%] justify-center mx-auto flex-col gap-4 text-center">
-        <h2 className="text-4xl font-bold leading-12">
+      <div className="flex items-center w-[80%] border md:w-[55%] justify-center mx-auto flex-col gap-4 text-center">
+        <h2 className="md:text-4xl text-3xl font-bold leading-12">
           Transform Your Conversions With{" "}
           <span className="text-[#0157FF]">Readify AI</span>
         </h2>
       </div>
 
       <div>
-        <p className="w-[70%] text-gray-400 text-center mx-auto py-5  flex leading-8">
+        <p className="md:w-[70%] w-[85%] text-gray-400 text-center mx-auto py-5  flex leading-8">
           Discover the power of Readify - your ultimate personal AI document
           summarizer, designed to enhance communication and supercharge your
           productivity.
