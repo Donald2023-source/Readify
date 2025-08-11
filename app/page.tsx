@@ -10,9 +10,11 @@ import Image from "next/image";
 import frame from "@/public/Frame 105.png";
 import { motion } from "framer-motion";
 import Himage from "@/public/Frame 111.png";
+import PricingCard from "@/app/Components/PriceCard";
+import PriceCard from "@/app/Components/PriceCard";
 const page = () => {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto flex flex-col items-center w-full">
       <div className="fixed top-0 bg-white/ rounded-xl backdrop-blur-lg left-0 w-full z-10">
         <Navbar />
       </div>
@@ -80,6 +82,9 @@ const page = () => {
         </motion.div>
 
         {/* Pricing */}
+        <div className="w-full">
+          <PriceCard className="w-[30%]" />
+        </div>
       </div>
     </div>
   );
