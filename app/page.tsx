@@ -13,7 +13,7 @@ import Himage from "@/public/Frame 111.png";
 const page = () => {
   return (
     <div>
-      <div className="fixed top-0 bg-white/70 backdrop-blur-lg left-0 w-full z-10">
+      <div className="fixed top-0 bg-white/ rounded-xl backdrop-blur-lg left-0 w-full z-10">
         <Navbar />
       </div>
       <div className=" flex flex-col items-center mx-auto justify-center w-full ">
@@ -67,11 +67,11 @@ const page = () => {
           transition={{ duration: 1.5 }}
           className="flex flex-col items-center py-5 justify-center gap-10"
         >
-          <h2 className="font-bold text-4xl text-center mx-auto w-[40%]">
+          <h2 className="font-bold text-2xl md:text-4xl text-center mx-auto w-[85%] md:w-[40%]">
             Launch Your AI Assistant In Just 3 Simple Steps
           </h2>
 
-          <Image className="w-[80%] mx-auto" src={Himage} alt="How it works" />
+          <Image className="md:w-[80%] w-[90%] mx-auto" src={Himage} alt="How it works" />
         </motion.div>
       </div>
     </div>
