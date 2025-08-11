@@ -26,7 +26,7 @@ const Hero = () => {
         />
       </div>
 
-      <div>
+      <div className="flex items-center justify-center gap-20 mt-10">
         <div className="flex items-center gap-4 mt-10 mx-auto">
           <Image src={chrome} alt="Chrome" />
           <div className="flex flex-col items-left">
