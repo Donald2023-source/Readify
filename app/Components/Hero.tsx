@@ -98,7 +98,7 @@ const Hero = () => {
         <Image
           src={heroImg}
           alt="Hero Image"
-          className="mt-10 w-[80%] mx-auto"
+          className="my-10 w-[80%] mx-auto"
         />
       </motion.div>
     </div>
