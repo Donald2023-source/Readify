@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
@@ -7,6 +8,7 @@ import { IoMdPaper } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import frame from "@/public/Frame 105.png";
+import { motion } from "framer-motion";
 const page = () => {
   return (
     <div>
@@ -17,7 +19,13 @@ const page = () => {
         </div>
 
         {/* features */}
-        <div className="mt-38 py-5">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.4 }}
+          id="features"
+          className="mt-38 py-5"
+        >
           <div>
             <h2 className="text-3xl font-bold w-[55%] leading-12 flex mx-auto text-center mb-3">
               Your All-In-One AI Powered Assitant For Instant Support,
@@ -46,8 +54,8 @@ const page = () => {
               </span>
             </div>
           </div>
-          <Image className="py-5" src={frame} alt="frame" />
-        </div>
+          <Image className="my-10" src={frame} alt="frame" />
+        </motion.div>
       </div>
     </div>
   );
