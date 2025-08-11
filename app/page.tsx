@@ -30,9 +30,11 @@ const page = () => {
     "Multi-channel intergration",
     "Custom Ai training and response",
     "Advanced Analytics & insights",
+    "Community Support",
     "Email Support",
     "Faster response speed",
     "3 Chatbot intergration",
+    "Preset Chatbot templates",
   ];
 
   const Buisiness = [
@@ -61,7 +63,7 @@ const page = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.4 }}
           id="features"
-          className="md:mt-38 py-5"
+          className="md:mt-96 py-10"
         >
           <div>
             <h2 className="md:text-3xl text-2xl p-3 font-bold md:w-[55%] leading-12 flex mx-auto text-center mb-3">
@@ -114,24 +116,30 @@ const page = () => {
         </motion.div>
 
         {/* Pricing */}
-        <motion.div id="pricing" className="max-w-6xl mx-auto flex md:flex-row justify-center flex-col items-center w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          id="pricing"
+          className="max-w-6xl mx-auto flex md:flex-row gap-10 justify-center flex-col items-center w-full"
+        >
           <PriceCard
             planData={Starter}
             name="Starter"
             price="Free"
-            className="md:w-[30%] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
+            className="md:w-[30%] flex items-start flex-col h-[34rem] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
           />
           <PriceCard
             planData={Professional}
             price="$25"
             name="Professional"
-            className="md:w-[30%] w-[80%] bg-[#111827] text-gray-300 shadow rounded-xl p-4"
+            className="md:w-[30%] h-[34rem] w-[80%] bg-[#111827] text-gray-300 shadow rounded-xl p-4"
           />
           <PriceCard
             planData={Buisiness}
             price="$45"
             name="Buisiness"
-            className="md:w-[30%] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
+            className="md:w-[30%] h-[34rem] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
           />
         </motion.div>
       </div>
