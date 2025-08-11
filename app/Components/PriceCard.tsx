@@ -11,7 +11,7 @@ interface CardProps {
 }
 const PriceCard = ({ className, planData, name, price }: CardProps) => {
   return (
-    <div className={(twMerge("py-2"), className)}>
+    <div className={(twMerge("py-2 h-80"), className)}>
       <div>
         <p className="font-bold underline">{name}</p>
         <h2 className="font-bold text-xl">{price}</h2>
@@ -25,7 +25,7 @@ const PriceCard = ({ className, planData, name, price }: CardProps) => {
           </div>
         ))}
       </div>
-      <Button text={"Try the 7-day Free Trial"} />
+      <Button className="md:flex" text={"Try the 7-day Free Trial"} />
     </div>
   );
 };

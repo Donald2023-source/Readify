@@ -114,26 +114,26 @@ const page = () => {
         </motion.div>
 
         {/* Pricing */}
-        <div className="max-w-6xl mx-auto flex flex-col items-center w-full">
+        <motion.div id="pricing" className="max-w-6xl mx-auto flex md:flex-row justify-center flex-col items-center w-full">
           <PriceCard
             planData={Starter}
             name="Starter"
             price="Free"
-            className="w-[30%] shadow bg-[#E5E7EB] rounded-xl p-4"
+            className="md:w-[30%] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
           />
           <PriceCard
             planData={Professional}
             price="$25"
             name="Professional"
-            className="w-[30%] bg-[#111827] shadow rounded-xl p-4"
+            className="md:w-[30%] w-[80%] bg-[#111827] text-gray-300 shadow rounded-xl p-4"
           />
           <PriceCard
             planData={Buisiness}
             price="$45"
             name="Buisiness"
-            className="w-[30%] shadow bg-[#E5E7EB] rounded-xl p-4"
+            className="md:w-[30%] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
