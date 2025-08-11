@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import { RiChatAiLine } from "react-icons/ri";
+import logo from "@/public/Logo.png";
 import { LuPencilLine, LuPhoneMissed } from "react-icons/lu";
 import { IoMdPaper } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
@@ -142,6 +143,15 @@ const page = () => {
             className="md:w-[30%] h-[34rem] w-[80%] shadow bg-[#E5E7EB] rounded-xl p-4"
           />
         </motion.div>
+
+        <div className="bg-black mt-4 flex justify-between items-center text-white p-20 w-full">
+          <div className="flex items-center gap-2">
+            <Image src={logo} alt="" />
+            <h2 className="font-bold">Readify AI</h2>
+          </div>
+
+          <p className="text-gray-400 my-8">@Copyright 2025 </p>
+        </div>
       </div>
     </div>
   );
