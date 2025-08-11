@@ -30,7 +30,7 @@ const page = () => {
           className="md:mt-38 py-5"
         >
           <div>
-            <h2 className="md:text-3xl text-2xl py-3 font-bold md:w-[55%] leading-12 flex mx-auto text-center mb-3">
+            <h2 className="md:text-3xl text-2xl p-3 font-bold md:w-[55%] leading-12 flex mx-auto text-center mb-3">
               Your All-In-One AI Powered Assitant For Instant Support,
               Productivity & Automation!
             </h2>
