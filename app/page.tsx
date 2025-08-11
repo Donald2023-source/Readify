@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
@@ -9,7 +9,7 @@ import { FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import frame from "@/public/Frame 105.png";
 import { motion } from "framer-motion";
-import Himage from "@/public/How it works.png"
+import Himage from "@/public/Frame 111.png";
 const page = () => {
   return (
     <div>
@@ -58,10 +58,18 @@ const page = () => {
           <Image className="my-10" src={frame} alt="frame" />
         </motion.div>
 
-        <motion.div  className="flex flex-col border items-center justify-center gap-10">
-        <h2 className="font-bold text-3xl text-center mx-auto w-[80%]">Launch Your AI Assistant In Just 3 Simple Steps</h2>
+        <motion.div
+          id="how-it-works"
+          initial={{ scale: 0.5, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          className="flex flex-col items-center justify-center gap-10"
+        >
+          <h2 className="font-bold text-3xl text-center mx-auto w-[40%]">
+            Launch Your AI Assistant In Just 3 Simple Steps
+          </h2>
 
-<Image className="w-[80%] mx-auto" src={Himage} alt="How it works" />
+          <Image className="w-[80%] mx-auto" src={Himage} alt="How it works" />
         </motion.div>
       </div>
     </div>
