@@ -27,10 +27,10 @@ const page = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.4 }}
           id="features"
-          className="mt-38 py-5"
+          className="md:mt-38 py-5"
         >
           <div>
-            <h2 className="text-3xl font-bold w-[55%] leading-12 flex mx-auto text-center mb-3">
+            <h2 className="md:text-3xl text-2xl py-3 font-bold md:w-[55%] leading-12 flex mx-auto text-center mb-3">
               Your All-In-One AI Powered Assitant For Instant Support,
               Productivity & Automation!
             </h2>
@@ -60,6 +60,7 @@ const page = () => {
           <Image className="my-10" src={frame} alt="frame" />
         </motion.div>
 
+        {/* How it works */}
         <motion.div
           id="how-it-works"
           initial={{ scale: 0.5, opacity: 0 }}
@@ -71,8 +72,14 @@ const page = () => {
             Launch Your AI Assistant In Just 3 Simple Steps
           </h2>
 
-          <Image className="md:w-[80%] w-[90%] mx-auto" src={Himage} alt="How it works" />
+          <Image
+            className="md:w-[80%] w-[90%] mx-auto"
+            src={Himage}
+            alt="How it works"
+          />
         </motion.div>
+
+        {/* Pricing */}
       </div>
     </div>
   );
