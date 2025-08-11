@@ -5,6 +5,8 @@ import { RiChatAiLine } from "react-icons/ri";
 import { LuPencilLine, LuPhoneMissed } from "react-icons/lu";
 import { IoMdPaper } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
+import Image from "next/image";
+import frame from "@/public/Frame 105.png";
 const page = () => {
   return (
     <div>
@@ -17,7 +19,7 @@ const page = () => {
         {/* features */}
         <div className="mt-38 py-5">
           <div>
-            <h2 className="text-3xl font-bold w-[60%] flex mx-auto text-center mb-3">
+            <h2 className="text-3xl font-bold w-[55%] leading-12 flex mx-auto text-center mb-3">
               Your All-In-One AI Powered Assitant For Instant Support,
               Productivity & Automation!
             </h2>
@@ -44,6 +46,7 @@ const page = () => {
               </span>
             </div>
           </div>
+          <Image className="py-5" src={frame} alt="frame" />
         </div>
       </div>
     </div>
