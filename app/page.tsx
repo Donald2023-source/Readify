@@ -13,7 +13,9 @@ import Himage from "@/public/Frame 111.png";
 const page = () => {
   return (
     <div>
-      <Navbar />
+      <div className="fixed top-0 bg-white/70 backdrop-blur-lg left-0 w-full z-10">
+        <Navbar />
+      </div>
       <div className=" flex flex-col items-center mx-auto justify-center w-full ">
         <div className="h-[95vh] mx-auto my-5 flex items-center flex-col bg-gradient-to-b w-full from-white to to-[#0036a1] from-30%">
           <Hero />
@@ -63,9 +65,9 @@ const page = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className="flex flex-col items-center justify-center gap-10"
+          className="flex flex-col items-center py-5 justify-center gap-10"
         >
-          <h2 className="font-bold text-3xl text-center mx-auto w-[40%]">
+          <h2 className="font-bold text-4xl text-center mx-auto w-[40%]">
             Launch Your AI Assistant In Just 3 Simple Steps
           </h2>
 
