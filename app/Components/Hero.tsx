@@ -2,8 +2,9 @@ import React from "react";
 import Button from "./Button";
 import Image from "next/image";
 import chrome from "@/public/Chrome.png";
-import product from "@/public/product.png"
+import product from "@/public/product.png";
 import { FaStar } from "react-icons/fa6";
+import heroImg from "@/public/Hero-image 1.png";
 const Hero = () => {
   return (
     <div className="h-full max-w-6xl flex items-center flex-col pt-10">
@@ -26,13 +27,17 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-20 mt-10">
-        <div className="flex items-center gap-4 mt-10 mx-auto">
-          <Image src={chrome} alt="Chrome" />
+      <div className="flex items-center justify-center gap-20">
+        <div className="flex items-center gap-4 mt-6 mx-auto">
+          <Image
+            className="md:h-fit md:w-fit h-10 w-10"
+            src={chrome}
+            alt="Chrome"
+          />
           <div className="flex flex-col items-left">
-            <div className="flex items-center gap-2 font-semibold">
-              <h2>4.9 / 5.0</h2>
-              <div>
+            <div className="flex items-center gap-1 md:gap-2 font-semibold">
+              <h2 className="text-sm ">4.9 / 5.0</h2>
+              <div className="text-sm">
                 <FaStar className="text-yellow-400 inline" />
                 <FaStar className="text-yellow-400 inline" />
                 <FaStar className="text-yellow-400 inline" />
@@ -40,16 +45,22 @@ const Hero = () => {
                 <FaStar className="text-yellow-400 inline" />
               </div>
             </div>
-            <p className=" text-gray-700">On chrome store</p>
+            <p className=" text-gray-700 text-sm py-1 md:text-lg">
+              On chrome store
+            </p>
           </div>
         </div>
 
-         <div className="flex items-center gap-4 mt-10 mx-auto">
-          <Image src={product} alt="product" />
+        <div className="flex items-center gap-4 mt-6 mx-auto">
+          <Image
+            className="md:h-fit md:w-fit h-10 w-10"
+            src={product}
+            alt="product"
+          />
           <div className="flex flex-col items-left">
-            <div className="flex items-center gap-2 font-semibold">
-              <h2>4.6 / 5.0</h2>
-              <div>
+            <div className="flex items-center md:gap-2 gap-1 font-semibold">
+              <h2 className="text-sm">4.6 / 5.0</h2>
+              <div className="text-sm">
                 <FaStar className="text-yellow-400 inline" />
                 <FaStar className="text-yellow-400 inline" />
                 <FaStar className="text-yellow-400 inline" />
@@ -57,9 +68,19 @@ const Hero = () => {
                 <FaStar className="text-yellow-400 inline" />
               </div>
             </div>
-            <p className=" text-gray-700">On Product Hunt</p>
+            <p className=" text-gray-700 text-sm py-1 md:text-lg">
+              On Product Hunt
+            </p>
           </div>
         </div>
+      </div>
+
+      <div>
+        <Image
+          src={heroImg}
+          alt="Hero Image"
+          className="mt-10 w-[80%] mx-auto"
+        />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ const Button = ({ className, text }: Props) => {
     <button
       className={twMerge(
         "bg-[#0157FF] md:hidden py-3 shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white",
-        className
+        className 
       )}
     >
       {text}
