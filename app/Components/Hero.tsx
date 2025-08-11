@@ -23,7 +23,7 @@ const Hero = () => {
       </motion.div>
 
       <motion.div
-        initial={{ x: -100, opacity: 0.3 }}
+        initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
       >
@@ -38,7 +38,12 @@ const Hero = () => {
         />
       </motion.div>
 
-      <div className="flex items-center justify-center gap-20">
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="flex items-center justify-center mt-4 px-4 gap-16 md:gap-20"
+      >
         <div className="flex items-center gap-4 mt-6 mx-auto">
           <Image
             className="md:h-fit md:w-fit h-10 w-10"
@@ -84,15 +89,18 @@ const Hero = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}>
         <Image
           src={heroImg}
           alt="Hero Image"
           className="mt-10 w-[80%] mx-auto"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
