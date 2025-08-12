@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 import { NextRequest, NextResponse } from "next/server"
-import User, { IUser, User } from "../Models/User"
+import User, { IUser} from "../Models/User"
 import bcrypt from "bcryptjs"
 
 const connectDB = async() => {
@@ -14,13 +14,11 @@ const connectDB = async() => {
 export async function POST(req: NextRequest) {
     await connectDB()
     
-    
-        
     try {
         const { fullName, email, password} = await req.json();
         if(!email || !password || !fullName) {
             return NextResponse.json({ message: "A field is missing" }, 
-            { status: 400 })
+             { status: 400 })
         }
         const exisingUser: IUser | null = await User.findOne({email})
         if(exisingUser) {
@@ -32,8 +30,8 @@ export async function POST(req: NextRequest) {
             email, 
             password: hashedPassword
         })
-        NextResponse.json({ newUser, message: `Welcome ${fullName}`}. { status: 201})
+        NextResponse.json({ newUser, message: `Welcome ${fullName}`}, { status: 201})
     } catch(err) {
-
-        }
+        NextResponse.json({ error: err}, { status: 500})
+    }
 }
