@@ -1,17 +1,19 @@
-'use client'
+"use client";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props {
   className?: string;
   text: string;
+  onClick?: () => void;
 }
-const Button = ({ className, text }: Props) => {
+const Button = ({ className, text, onClick }: Props) => {
   return (
     <button
+      onClick={() => onClick}
       className={twMerge(
         "bg-[#0157FF] md:hidden py-3 shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white",
-        className 
+        className
       )}
     >
       {text}
