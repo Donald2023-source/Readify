@@ -3,7 +3,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import * as pdfjsLib from "pdfjs-dist";
 import "pdfjs-dist/build/pdf.worker.entry";
 
-
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
 export async function POST(req: Request) {
@@ -33,7 +32,7 @@ export async function POST(req: Request) {
     // Summarize PDF
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const summaryResponse = await model.generateContent(
-      `Summarize this document in under 200 words:\n\n${fullText}`
+      `Summarize the following document in a way that is both concise and detailed. Include the main points, key arguments, important facts, and any notable conclusions or recommendations. Avoid unnecessary repetition, but ensure that no important detail is left out. Present the summary in clear, well-structured paragraphs. Put the name of the summary as first sentence. After the summary, provide a bullet-point list of the most critical points from the document for quick reference:\n\n${fullText}`
     );
     const summary = summaryResponse.response.text();
 
