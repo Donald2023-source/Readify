@@ -2,7 +2,8 @@
 import Button from "@/app/Components/Button";
 import { GoogleGenAI } from "@google/genai";
 import React, { useState } from "react";
-
+import logo from "@/public/Logo.png"
+import Image from "next/image";
 const page = () => {
   const [summary, setSummary] = useState("");
   const [searchQueries, setSearchQueries] = useState("");
@@ -24,9 +25,9 @@ const page = () => {
     setSearchQueries(data?.searchQueries);
   };
   return (
-    <div>
-        <div>
-          
+    <div className="max-w-6xl flex mx-auto border justify-center">
+        <div >
+            <Image className="h-10 w-10" src={logo} alt="logo" />
         </div>
     </div>
   );
