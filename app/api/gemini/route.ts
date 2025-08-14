@@ -20,7 +20,6 @@ export async function POST(req: Request) {
     // Load PDF
     const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
 
- 
     let fullText = "";
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
       const page = await pdf.getPage(pageNum);
@@ -41,7 +40,20 @@ export async function POST(req: Request) {
       `From the summary below, generate 5 Google search queries to find similar content:\n\n${summary}`
     );
     const searchQueries = searchQueryResponse.response.text();
+    // Save response to MongoDB
+    const { MongoClient } = await import("mongodb");
 
+    const client = new MongoClient(process.env.MONGO_URI!);
+    await client.connect();
+    const db = client.db(process.env.MONGODB_DB || "readify");
+    const collection = db.collection("summaries");
+    await collection.insertOne({
+      summary,
+      searchQueries,
+      createdAt: new Date(),
+      fileName: `Summary of ${file.name}`,
+    });
+    await client.close();
     return NextResponse.json({
       summary,
       searchQueries,

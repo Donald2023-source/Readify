@@ -25,17 +25,7 @@ const page = () => {
   };
   return (
     <div>
-      <form onSubmit={handleUpload} action="">
-        <input type="file" id="pdfFile" accept="application/pdf" />
-        <button className="py-4 px-10 bg-blue-400 text-white hover:scale-95 cursor-pointer">Upload & Summarize</button>
-
-        {summary && (
-          <div>
-            <h3>{summary}</h3>
-            <h4>{searchQueries}</h4>
-          </div>
-        )}
-      </form>
+      
     </div>
   );
 };
