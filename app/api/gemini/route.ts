@@ -40,9 +40,22 @@ export async function POST(req: Request) {
     const searchQueryResponse = await model.generateContent(
       `From the summary below, generate 5 Google search queries to find similar content:\n\n${summary}`
     );
+
     const searchQueries =
       searchQueryResponse.response.candidates?.[0]?.content?.parts?.[0]?.text ||
       "No search queries generated.";
+
+    const { MongoClient } = await import("mongodb");
+    const client = new MongoClient(process.env.MONGO_URI!);
+    await client.connect();
+    const db = client.db(process.env.MONGO_DB || "readify");
+    const collection = db.collection("summaries");
+    await collection.insertOne({
+      summary,
+      searchQueries,
+      createdAt: new Date(),
+      fileName: `Summary of ${file.name}`,
+    });
 
     return NextResponse.json({ summary, searchQueries });
   } catch (error) {
