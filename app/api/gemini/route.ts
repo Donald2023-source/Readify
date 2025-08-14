@@ -9,6 +9,7 @@ export async function POST(req: Request) {
   try {
     const formData = await req.formData();
     const file = formData.get("file") as File;
+    const prompt = formData.get("string") as String;
 
     if (!file) {
       return NextResponse.json({ error: "No PDF uploaded" }, { status: 400 });
@@ -31,7 +32,9 @@ export async function POST(req: Request) {
     // Summarize PDF
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const summaryResponse = await model.generateContent(
-      `Summarize the following document in a way that is both concise and detailed. Include the main points, key arguments, important facts, and any notable conclusions or recommendations. Avoid unnecessary repetition, but ensure that no important detail is left out. Present the summary in clear, well-structured paragraphs. Put the name of the summary as first sentence. After the summary, provide a bullet-point list of the most critical points from the document for quick reference:\n\n${fullText}`
+      prompt === ""
+        ? `Summarize the following document in a way that is both concise and detailed. Include the main points, key arguments, important facts, and any notable conclusions or recommendations. Avoid unnecessary repetition, but ensure that no important detail is left out. Present the summary in clear, well-structured paragraphs. Put the name of the summary as first sentence. After the summary, provide a bullet-point list of the most critical points from the document for quick reference:\n\n${fullText}`
+        : "prompt"
     );
     const summary = summaryResponse.response.text();
 

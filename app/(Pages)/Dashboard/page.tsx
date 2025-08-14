@@ -1,8 +1,8 @@
-  "use client";
+"use client";
 import Button from "@/app/Components/Button";
 import { GoogleGenAI } from "@google/genai";
 import React, { useState } from "react";
-import logo from "@/public/Logo.png"
+import logo from "@/public/Logo.png";
 import Image from "next/image";
 const page = () => {
   const [summary, setSummary] = useState("");
@@ -26,14 +26,18 @@ const page = () => {
   };
 
   return (
-    <div className="max-w-6xl flex mx-auto border justify-center">
-        <div className="flex items-center w-full justify-between">
-            <span className='flex items-center gap-2'>
-              <Image className="h-10 w-10" src={logo} alt="logo" />
-              <h2 className="font-semibold tracking-wider">Readify</h2>
-            </span>
-            <Button className="md:flex" text="My Documents" />
-        </div>
+    <div className="max-w-6xl flex mx-auto justify-center">
+      <div className="flex items-center w-full justify-between">
+        <span className="flex items-center gap-2">
+          <Image className="h-10 w-10" src={logo} alt="logo" /> 
+          <h2 className="font-semibold tracking-wider">Readify</h2>
+        </span>
+        <Button className="md:flex" text="My Documents" />
+      </div>
+
+      <div>
+        
+      </div>
     </div>
   );
 };
