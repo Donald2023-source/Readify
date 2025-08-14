@@ -26,17 +26,18 @@ const page = () => {
   };
 
   return (
-    <div className="max-w-6xl flex mx-auto justify-center">
+    <div className="max-w-6xl  flex flex-col border mx-auto items-center h-screen">
       <div className="flex items-center w-full justify-between">
         <span className="flex items-center gap-2">
-          <Image className="h-10 w-10" src={logo} alt="logo" /> 
+          <Image className="h-10 w-10" src={logo} alt="logo" />
           <h2 className="font-semibold tracking-wider">Readify</h2>
         </span>
         <Button className="md:flex" text="My Documents" />
       </div>
 
-      <div>
-        
+      <div className="flex items-center flex-col justify-center h-full">
+        <h2 className="text-xl ">Hi, I'm Readify. Your document summary Assistant</h2>
+        <input className="border" type="text" placeholder="I'm Here to help you summarize your documents" />
       </div>
     </div>
   );
