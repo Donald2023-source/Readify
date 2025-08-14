@@ -37,7 +37,7 @@ const page = () => {
 
       <div className="flex items-center flex-col justify-center h-full">
         <h2 className="text-xl ">Hi, I'm Readify. Your document summary Assistant</h2>
-        <input className="border" type="text" placeholder="I'm Here to help you summarize your documents" />
+        <input className="border py-3 px-20 my-6" type="text" placeholder="I'm Here to help you summarize your documents" />
       </div>
     </div>
   );
