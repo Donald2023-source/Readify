@@ -8,7 +8,7 @@ import { FaPlus } from "react-icons/fa6";
 const page = () => {
   const [summary, setSummary] = useState("");
   const [searchQueries, setSearchQueries] = useState("");
-  const [prompt, setPrompt] = useState("")
+  const [prompt, setPrompt] = useState("");
   const handleUpload = async (e: React.FormEvent) => {
     e.preventDefault();
     const fileInput = document.querySelector<HTMLInputElement>("#pdfFile");
@@ -16,7 +16,7 @@ const page = () => {
 
     const formData = new FormData();
     formData.append("file", fileInput.files[0]);
-    formData.append("prompt", prompt)
+    formData.append("prompt", prompt);
 
     const res = await fetch("/api/gemini", {
       method: "POST",
@@ -28,10 +28,11 @@ const page = () => {
     setSearchQueries(data?.searchQueries);
   };
 
-  document.addEventListener("onKeyPress", (e:React.FormEvent) => {
-    handleUpload(e);
-  });
-
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleUpload(e);
+    }
+  };
   return (
     <div className="max-w-6xl  flex flex-col   mx-auto items-center h-screen">
       <div className="flex items-center w-full justify-between py-4 ">
@@ -49,18 +50,25 @@ const page = () => {
         <form onSubmit={handleUpload} className="w-full">
           <fieldset className="border flex items-center justify-between border-gray-300 py-5 w-full px-6 rounded-full outline-none my-6">
             <input
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPrompt(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setPrompt(e.target.value)
+              }
               type="text"
               placeholder="I'm Here to help you summarize your documents"
               className="w-full outline-none"
               value={prompt}
               name="prompt"
+              onKeyPress={handleKeyPress}
             />
-            <input className="hidden" type="file" name="file" id="pdfFile" />
+            <input
+              className="hidden"
+              type="file"
+              id="pdfFile"
+              accept="application/pdf"
+            />
             <label htmlFor="pdfFile">
               <FaPlus className="text-gray-600 text-xl cursor-pointer" />
             </label>
-            <Button type="submit" text="Summarize" className="ml-4" />
           </fieldset>
         </form>
         {summary && (
@@ -69,8 +77,8 @@ const page = () => {
             <p>{summary}</p>
             {searchQueries && (
               <>
-          <h4 className="font-semibold mt-4">Search Queries:</h4>
-          <p>{searchQueries}</p>
+                <h4 className="font-semibold mt-4">Search Queries:</h4>
+                <p>{searchQueries}</p>
               </>
             )}
           </div>
