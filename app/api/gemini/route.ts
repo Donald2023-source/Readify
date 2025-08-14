@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     // Load PDF
     const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
 
-    // Extract all text
+ 
     let fullText = "";
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
       const page = await pdf.getPage(pageNum);
