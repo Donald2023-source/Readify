@@ -4,6 +4,7 @@ import { GoogleGenAI } from "@google/genai";
 import React, { useState } from "react";
 import logo from "@/public/Logo.png";
 import Image from "next/image";
+import { FaPlus } from "react-icons/fa6";
 const page = () => {
   const [summary, setSummary] = useState("");
   const [searchQueries, setSearchQueries] = useState("");
@@ -35,9 +36,18 @@ const page = () => {
         <Button className="md:flex" text="My Documents" />
       </div>
 
-      <div className="flex items-center flex-col justify-center h-full">
-        <h2 className="text-xl ">Hi, I'm Readify. Your document summary Assistant</h2>
-        <input className="border py-3 px-20 my-6" type="text" placeholder="I'm Here to help you summarize your documents" />
+      <div className="flex items-center w-[70%] flex-col justify-center h-full">
+        <h2 className="text-xl ">
+          Hi, I'm Readify. Your document summary Assistant
+        </h2>
+        <fieldset className="border flex items-center justify-between  border-gray-300 py-5 w-full px-6 rounded-full outline-none my-6">
+          <input
+            type="text"
+            placeholder="I'm Here to help you summarize your documents"
+            className="w-full outline-none"
+          />
+          <FaPlus className="text-gray-600" />
+        </fieldset>
       </div>
     </div>
   );
