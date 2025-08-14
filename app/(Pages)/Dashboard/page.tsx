@@ -24,14 +24,15 @@ const page = () => {
     setSummary(data?.summary);
     setSearchQueries(data?.searchQueries);
   };
+
   return (
     <div className="max-w-6xl flex mx-auto border justify-center">
-        <div className="">
-            <span>
+        <div className="flex items-center w-full justify-between">
+            <span className='flex items-center gap-2'>
               <Image className="h-10 w-10" src={logo} alt="logo" />
               <h2 className="font-semibold tracking-wider">Readify</h2>
             </span>
-            <Button text="My Documents" />
+            <Button className="md:flex" text="My Documents" />
         </div>
     </div>
   );
