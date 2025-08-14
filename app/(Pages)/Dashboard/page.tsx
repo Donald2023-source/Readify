@@ -26,8 +26,12 @@ const page = () => {
   };
   return (
     <div className="max-w-6xl flex mx-auto border justify-center">
-        <div >
-            <Image className="h-10 w-10" src={logo} alt="logo" />
+        <div className="">
+            <span>
+              <Image className="h-10 w-10" src={logo} alt="logo" />
+              <h2 className="font-semibold tracking-wider">Readify</h2>
+            </span>
+            <Button text="My Documents" />
         </div>
     </div>
   );
