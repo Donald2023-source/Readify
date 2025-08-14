@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import Button from "@/app/Components/Button";
 import { GoogleGenAI } from "@google/genai";
 import React, { useState } from "react";
@@ -25,7 +25,9 @@ const page = () => {
   };
   return (
     <div>
-      
+        <div>
+          
+        </div>
     </div>
   );
 };
