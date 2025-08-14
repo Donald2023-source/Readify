@@ -15,7 +15,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "No PDF uploaded" }, { status: 400 });
     }
 
-    // Read file buffer
     const arrayBuffer = await file.arrayBuffer();
     const typedArray = new Uint8Array(arrayBuffer);
 
