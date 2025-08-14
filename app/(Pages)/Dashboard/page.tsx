@@ -27,7 +27,7 @@ const page = () => {
   };
 
   return (
-    <div className="max-w-6xl  flex flex-col border mx-auto items-center h-screen">
+    <div className="max-w-6xl  flex flex-col   mx-auto items-center h-screen">
       <div className="flex items-center w-full justify-between">
         <span className="flex items-center gap-2">
           <Image className="h-10 w-10" src={logo} alt="logo" />
@@ -46,7 +46,10 @@ const page = () => {
             placeholder="I'm Here to help you summarize your documents"
             className="w-full outline-none"
           />
-          <FaPlus className="text-gray-600" />
+          <input className="hidden" type="file" name="file" id="file" />
+          <label htmlFor="file">
+            <FaPlus className="text-gray-600" />
+          </label>
         </fieldset>
       </div>
     </div>
