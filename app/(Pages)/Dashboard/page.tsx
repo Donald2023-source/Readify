@@ -24,7 +24,7 @@ const Page = () => {
     const file = fileInputRef.current?.files?.[0];
     if (!file) {
       alert("Please select a PDF file to upload.");
-      setMessage("Something went wrong!.");
+    
       return;
     }
 
