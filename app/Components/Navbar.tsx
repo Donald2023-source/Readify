@@ -35,10 +35,10 @@ const Navbar = () => {
   return (
     <nav className="p-3 relative z-1">
       <div className="flex items-center justify-between h-10">
-        <div className="flex items-center gap-2">
+        <Link href={"/"} className="flex items-center gap-2">
           <Image className="h-10 w-10" src={logo} alt="logo" />
           <h2 className="font-bold text-lg">Readify</h2>
-        </div>
+        </Link>
 
         <div
           className={

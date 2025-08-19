@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "@/public/Logo.png";
 import { FaPlus, FaFilePdf } from "react-icons/fa6";
 import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 
 const Page = () => {
   const [summary, setSummary] = useState("");
@@ -24,7 +25,7 @@ const Page = () => {
     const file = fileInputRef.current?.files?.[0];
     if (!file) {
       alert("Please select a PDF file to upload.");
-    
+
       return;
     }
 
@@ -57,18 +58,16 @@ const Page = () => {
 
   return (
     <div className="max-w-6xl mx-auto h-screen flex flex-col px-4">
-      {/* Header */}
       <header className="w-full flex justify-between items-center py-4 bg-white shadow fixed top-0 left-0 right-0 px-4 md:px-8 z-10">
-        <div className="flex items-center gap-2">
+        <Link href={"/"} className="flex items-center gap-2">
           <Image src={logo} alt="Readify Logo" className="h-10 w-10" />
           <h2 className="font-semibold text-lg">Readify</h2>
-        </div>
+        </Link>
         <button className="bg-[#0157FF] py-2 px-6 rounded-full text-white shadow hover:scale-95 transition">
           New Document
         </button>
       </header>
 
-      {/* Content */}
       <main className="flex flex-col items-center w-full mt-24 flex-1">
         <form
           onSubmit={handleUpload}
@@ -104,9 +103,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="absolute bg-white/20 w-full border backdrop-blur-lg">
-            
-          </div>
+          <div className="absolute bg-white/20 w-full border backdrop-blur-lg"></div>
 
           <button
             type="submit"
@@ -122,7 +119,6 @@ const Page = () => {
           </div>
         )}
 
-        {/* Summary */}
         {summary && !isLoading && (
           <div className="mt-8 w-full max-w-4xl bg-white rounded-xl shadow p-6 overflow-auto">
             <h3 className="font-semibold mb-2 text-lg">Summary</h3>
