@@ -73,9 +73,12 @@ const Navbar = () => {
         >
           <IoMenu className="text-3xl" />
         </h2>
-        <button className="bg-[#0157FF] py-3 md:block hidden shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white">
+        <Link
+          href={"/Dashboard"}
+          className="bg-[#0157FF] py-3 md:block hidden shadow-xl text-sm cursor-pointer hover:scale-95 transition px-7 rounded-full text-white"
+        >
           Try 7-day Free trial
-        </button>
+        </Link>
       </div>
     </nav>
   );
