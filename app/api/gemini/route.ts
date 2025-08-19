@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf";
-import "pdfjs-dist/legacy/build/pdf.worker";
+import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
+import pdfWorker from "pdfjs-dist/build/pdf.worker.entry";
+
+GlobalWorkerOptions.workerSrc = pdfWorker;
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
@@ -17,7 +19,7 @@ export async function POST(req: Request) {
 
     const arrayBuffer = await file.arrayBuffer();
     const typedArray = new Uint8Array(arrayBuffer);
-    const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
+    const pdf = await getDocument({ data: typedArray }).promise;
 
     let fullText = "";
     for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
@@ -27,7 +29,6 @@ export async function POST(req: Request) {
       fullText += pageText + "\n";
     }
 
-    // Summarize PDF
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const summaryResponse = await model.generateContent(
       `${prompt}\n\n${fullText}`
